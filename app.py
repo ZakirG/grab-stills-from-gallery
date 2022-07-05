@@ -317,45 +317,21 @@ def get_number_of_photos_in_folder(path):
     exit()
     return x
 
-def screenshot_the_folder(path_or_num_photos):
-    
-    
-    
-    # number_of_photos_in_folder = get_number_of_photos_in_folder(path)
-    number_of_photos_in_folder = path_or_num_photos
-
+def screenshot_the_folder(num_photos):
     # move( 167, 862 ) # top left edge of photo when finder window is completely maximized manually by dragging each edge
     move (246,  610)
     pyautogui.click()
-    
 
-    limit = 126 # prevent infinite loops
-    l = 0
     num_right_arrow_presses = 0
-    photos_remain  = True
-    while photos_remain:
+    for i in range(num_photos):
         take_a_screenshot()
         next_photo()
         num_right_arrow_presses += 1
         l += 1
-        if l > limit:
-            print("exiting")
-            exit()
-        
-
-        
-        
-        photos_remain = number_of_photos_in_folder - num_right_arrow_presses
 
 if __name__ == "__main__":
-    
-
-
     # path = "/Users/zakirgowani/Desktop/FUN_FILES/TECH/neural-net-random-art/results/1"
-
     number_of_photos = 125
-
-
     screenshot_the_folder(number_of_photos)
 
     
