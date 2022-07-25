@@ -1,4 +1,4 @@
-# automate-logic-pro
+# grab-stills-from-gallery
 
 using pyautogui to screenshot all the photos in a gallery
 
